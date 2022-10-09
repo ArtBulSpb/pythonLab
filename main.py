@@ -1,5 +1,6 @@
+print("введите строку")
 s = input()
 if len(s) > 5:
-    print(s[:3], s[len(s) - 3:])
+    print(s[:3], s[len(s) - 3:])#вывод первых и последних трех символов
 else:
-    print(s[0] * len(s))
+    print(s[0] * len(s))#вывод первого символа
