@@ -29,6 +29,7 @@ class human:
                 print("год рождения введен неверно, подставлено стандертное значение ", year)
 
         try:
+            # TODO Обработать ввод года меньше года рождения
             newyear = int(input("Введите год, в котором хотите узнать возраст человека  "))
         except:
             newyear = 2022
@@ -62,7 +63,7 @@ name = info.namechange()  # Вызываем метод класса human()
 info2 = student(info.yearchange())
 info2.study()
 print("Поздравляем, ", name)
-print("Вы зачислены в группу ", random.randint(100, 200))
-print("Начало курса: ", now.year + info2.study())
-print("Окончание курса: ", now.year + info2.study() + study_time)
+print("Вы зачислены в группу ", random.randint(100, 200))# Назначение группы обучения
+print("Начало курса: ", now.year + info2.study()) # Начало занятий
+print("Окончание курса: ", now.year + info2.study() + study_time) #Окончание занятий
 
