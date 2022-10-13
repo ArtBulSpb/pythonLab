@@ -55,6 +55,10 @@ class student(human):
                 start_course = 17 - self.age
 
         return start_course
+    def course(self, start_course):
+        for i in range (start_course, start_course + study_time - 2):
+            print("год обучения", i + 1)
+
 
 
 info = human()  # Создаём экземпляр класса
@@ -65,5 +69,8 @@ info2.study()
 print("Поздравляем, ", name)
 print("Вы зачислены в группу ", random.randint(100, 200))# Назначение группы обучения
 print("Начало курса: ", now.year + info2.study()) # Начало занятий
-print("Окончание курса: ", now.year + info2.study() + study_time) #Окончание занятий
+info2.course(now.year + info2.study())
+print("Окончание курса: ", now.year + info2.study() + study_time - 1) #Окончание занятий
+
+
 
