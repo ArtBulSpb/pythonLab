@@ -21,9 +21,9 @@ class quadrate:
 quad1 = quadrate()
 quad2 = quadrate()
 
-print("Вызываем метод perimeter")
+# print("Вызываем метод perimeter")
 quad1.perimeter(quad1.request())  # Hello work
 
-print("Вызываем методы perimeter и square")
+# print("Вызываем методы perimeter и square")
 quad2.square(quad1.request())
 quad2.perimeter(quad1.request())
