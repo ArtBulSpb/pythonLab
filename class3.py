@@ -17,6 +17,10 @@ class human:
         return name
 
     def yearchange(self):  # метод определения возраста
+        # def first(year):
+        #     return int(year)
+        # def second( newyear):
+        #     return int(newyear)
 
         year = int(now.year) + 1
 
@@ -28,6 +32,9 @@ class human:
                 year = 2005
                 print("год рождения введен неверно, подставлено стандертное значение ", year)
             newyear = " "
+
+
+            # first(year)
             while (newyear == " "):
                 try:
                     newyear = int(input("Введите год, в котором хотите узнать возраст человека  "))
@@ -41,7 +48,12 @@ class human:
                 except:
                     print("год введен неверно ")
         print("43 NY = ", newyear)
-        return int(year), int(newyear)
+
+
+        # second(newyear)
+        return  int(year), int(newyear)
+
+
 
     def agecount(self, newyear, year):
         age = newyear - year
@@ -55,17 +67,16 @@ class student(human):
         # print("init, age = ", age)
 
     def study(self):
+        start_course = 0
+        # if self.age >= 17 and self.age <= 27:  # and self.age <= 22:
+        #
+        #
+        # else:
 
-        if self.age >= 17 and self.age <= 27:  # and self.age <= 22:
-            start_course = 0
-
-        else:
-
-            if self.age < 17:
-                print(self.age)
-                start_course = 17 - self.age
-                print(start_course)
-
+        if self.age < 17:
+            print(self.age)
+            start_course = 17 - self.age
+            print(start_course)
         return start_course
     def course(self, start_course):
         for i in range (start_course, start_course + study_time - 2):
