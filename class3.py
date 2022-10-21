@@ -69,11 +69,12 @@ class student(human):
         if trigger:
             time_data = start_course + study_time - 1
         else:
-            time_data = start_course + random.randint(1, study_time) - 1
+            a = random.randint(1, study_time) - 1
+            time_data = start_course + a
         for i in range(start_course + 1, time_data):
             print("год обучения", i)
         if not trigger:
-            print("студент отчислен ")
+            print("студент отчислен на ", a, " курсе ")
 
 
 #student1
