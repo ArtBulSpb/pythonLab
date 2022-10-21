@@ -48,6 +48,10 @@ class exchange:
             print("минимальный курс ", value, "= ", exchange_rate_min, "руб   в ", counter + 1, " день")
 
 
-
+print("Объект 1 ")
 a = exchange()
 a.market()
+
+print("Объект 2 ")
+b = exchange()
+b.market()

@@ -17,7 +17,7 @@ class human:
         return name
 
     def yearchange(self):  # метод определения возраста
-
+        global year
         year = int(now.year) + 1
 
         while year > now.year:
@@ -71,25 +71,54 @@ class student(human):
         #print("start_course = ", start_course)
         return start_course
 
-    def course(self, start_course):
-        for i in range(start_course+1, start_course + study_time - 1):
+    def course(self, start_course, trigger):
+        if trigger:
+            time_data = start_course + study_time - 1
+        else:
+            print(random.randint(1, study_time) - 1)
+            time_data = start_course + random.randint(1, study_time) - 1
+        for i in range(start_course, time_data):
             print("год обучения", i)
+        if not trigger:
+            print("****")
+
+    # def course2(self, start_course):
+    #     for j in range(start_course+1, ):
+    #         print("год обучения", j)
 
 
 info = human()  # Создаём экземпляр класса
 name = info.namechange()  # Вызываем метод класса human()
-middle = info.yearchange()
+middle = info.yearchange() # возвращает кортеж из год рождения и год в котором нужно узнать возраст
 age_count = info.agecount(middle[0])
 future_age = info.futureAgecount(middle[1], middle[0])
 info2 = student(age_count, middle[1])
 
 start_course = info2.study()
-
 start_study = now.year + start_course
 
 print("Поздравляем, ", name)
 print("Вы зачислены в группу ", random.randint(100, 200), "\n")  # Назначение группы обучения
-print("Начало обчения: ", now.year + start_course)  # Начало занятий
-info2.course(start_study) #распечатка по годам
-print("Окончание курса: ", start_study + study_time - 1)  # Окончание занятий
+print("Начало обчения: ", year + 17 )  # Начало занятий
+info2.course((year + 17), 1) #распечатка по годам
+print("Окончание курса: ", year + 17 + study_time - 1)  # Окончание занятий
+print("\nСтоимость обучения в ГУАП составляет 46 000руб./сессия. Скидок нет.")
+
+############################################# 2
+
+info3 = human()  # Создаём экземпляр класса
+name1 = info3.namechange()  # Вызываем метод класса human()
+middle1 = info3.yearchange()# возвращает кортеж из год рождения и год в котором нужно узнать возраст
+age_count1 = info3.agecount(middle[0])
+future_age1 = info3.futureAgecount(middle[1], middle[0])
+info4 = student(age_count, middle[1])
+
+start_course2 = info4.study()
+start_study2 = now.year + start_course2
+
+print("Поздравляем, ", name)
+print("Вы зачислены в группу ", random.randint(100, 200), "\n")  # Назначение группы обучения
+print("Начало обчения: ", year + 17 )  # Начало занятий
+info4.course((year + 17), 0) #распечатка по годам
+print("Окончание курса: ", year + 17 + study_time - 1)  # Окончание занятий
 print("\nСтоимость обучения в ГУАП составляет 46 000руб./сессия. Скидок нет.")
